@@ -1,0 +1,7 @@
+services:
+  go-cli-chat:
+    build: .
+    image: go-cli-chat
+    container_name: go-cli-chat
+    volumes:
+      - .:/code
