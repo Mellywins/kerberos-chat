@@ -1,7 +1,7 @@
 # Cli chat that supports Kerberos Authentification, Written in Golang
 <div align="center">
 
-![image](assets/ss.png)
+![image](assets/ss1.png)
 </div>
 
 ## Prerequisites
