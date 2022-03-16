@@ -120,20 +120,22 @@ const (
 )
 
 var (
-	DEBUG_LOG = false
+	DEBUG_LOG = "0"
 )
 
 var l = log.New(os.Stderr, "GOKRB5 Client: ", log.LstdFlags)
 
 func LOG_ERROR(msgDebug string, userFriendlyError string, err error) {
-	if DEBUG_LOG {
+	if DEBUG_LOG == "1" {
 		l.Fatalf(msgDebug, err)
 		return
 	}
 	l.Fatalf(userFriendlyError)
 }
+
 func setUpAuth(keytabPath string, spn string, realm string) (*client.Client, *log.Logger, bool) {
 	authenticated := false
+	DEBUG_LOG = os.Getenv("CLI_CHAT_DEBUG")
 	//defer profile.Start(profile.TraceProfile).Stop()
 	// Load the keytab
 	kt, err := keytab.Load(keytabPath)
