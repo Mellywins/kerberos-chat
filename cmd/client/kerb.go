@@ -120,7 +120,7 @@ const (
 )
 
 var (
-	DEBUG_LOG = "0"
+	DEBUG_LOG = "1"
 )
 
 var l = log.New(os.Stderr, "GOKRB5 Client: ", log.LstdFlags)
